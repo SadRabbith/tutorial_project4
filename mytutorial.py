@@ -73,18 +73,42 @@ filtered_signal = # [YOUR CODE HERE] use numpy.fft.ifft()
 # STEP 4: Plot the filtered signal against the original clean signal for comparison.
 fig, axs = plt.subplots(3, 1, figsize=(10, 12))
 
-fig.suptitle("")
+fig.suptitle("FFT-based Low-Pass Filtering Results", fontsize=16)
 
-#ADD YOUR FILTERED SIGNAL
+# Time Domain Plot Comparison
+# HINT: Plot the Noisy Signal, the Filtered Signal, and the Ideal Clean Signal.
+axs[0].plot(t, signal, 'r', alpha=0.5, label='Noisy Signal (Input)')
 
-plt.plot(t, YOUR CODE, label='Filtered Signal (Output)')
+#uncomment and finish the code
 
+#axs[0].plot(t, , 'b', label='Filtered Signal (Output)') # [STUDENT CODE HERE: Filtered Signal]
+#axs[0].plot(t, , 'k--', alpha=0.5, label='Ideal Clean Signal') # [STUDENT CODE HERE: Ideal Clean Signal]
+#axs[0].set_title('1. Time Domain Comparison')
+axs[0].set_xlabel('Time (s)')
+axs[0].set_ylabel('Amplitude')
+axs[0].legend()
+axs[0].grid(True)
 
-plt.plot(t,YOUR CODE , '--', alpha=0.6, label='Ideal Clean Signal')
-plt.title('Filtered Signal vs. Ideal Signal')
-plt.xlabel('Time (s)')
-plt.ylabel('Amplitude')
-plt.legend()
-plt.grid(True)
+# Frequency Domain Plot - Before Filter
+# Plot the magnitude of the FFT before filtering, using positive frequencies.
+axs[1].plot(freqs[YOUR CONDITION], np.abs(X_filter)[freqs >= 0] / N, 'o-') # [STUDENT CODE HERE: Plot X_filter]
+axs[1].axvline(cutoff_freq, color='r', linestyle='--', label='Cutoff: 100 Hz')
+axs[1].set_title('2. Frequency Spectrum (Before Filtering)')
+axs[1].set_xlim(0, 250)
+axs[1].set_xlabel('Frequency (Hz)')
+axs[1].set_ylabel('Normalized Amplitude')
+axs[1].legend()
+
+# Frequency Domain Plot - After Filter
+# Plot the magnitude of the FFT after filtering, using positive frequencies.
+axs[2].plot(freqs[YOUR CONDITION], np.abs(X_filtered)[freqs >= 0] / N, 'o-') # [STUDENT CODE HERE: Plot X_filtered]
+axs[2].axvline(cutoff_freq, color='r', linestyle='--', label='Cutoff: 100 Hz')
+axs[2].set_title('3. Frequency Spectrum (After Filtering)')
+axs[2].set_xlim(0, 250)
+axs[2].set_xlabel('Frequency (Hz)')
+axs[2].set_ylabel('Normalized Amplitude')
+axs[2].legend()
+
+plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.show()
 # ----------------------------------------------------
