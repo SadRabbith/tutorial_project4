@@ -91,7 +91,7 @@ axs[0].grid(True)
 
 # Frequency Domain Plot - Before Filter
 # Plot the magnitude of the FFT before filtering, using positive frequencies.
-axs[1].plot(freqs[YOUR CONDITION], np.abs(X_filter)[freqs >= 0] / N, 'o-') # [STUDENT CODE HERE: Plot X_filter]
+axs[1].plot(freqs[YOUR CONDITION], np.abs(X_filter)[YOUR CONDITION] / N, 'o-') # [STUDENT CODE HERE: Plot X_filter]
 axs[1].axvline(cutoff_freq, color='r', linestyle='--', label='Cutoff: 100 Hz')
 axs[1].set_title('2. Frequency Spectrum (Before Filtering)')
 axs[1].set_xlim(0, 250)
@@ -101,7 +101,7 @@ axs[1].legend()
 
 # Frequency Domain Plot - After Filter
 # Plot the magnitude of the FFT after filtering, using positive frequencies.
-axs[2].plot(freqs[YOUR CONDITION], np.abs(X_filtered)[freqs >= 0] / N, 'o-') # [STUDENT CODE HERE: Plot X_filtered]
+axs[2].plot(freqs[YOUR CONDITION], np.abs(X_filtered)[YOUR CONDITION] / N, 'o-') # [STUDENT CODE HERE: Plot X_filtered]
 axs[2].axvline(cutoff_freq, color='r', linestyle='--', label='Cutoff: 100 Hz')
 axs[2].set_title('3. Frequency Spectrum (After Filtering)')
 axs[2].set_xlim(0, 250)
