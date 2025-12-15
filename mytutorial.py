@@ -35,7 +35,7 @@ plt.show()
 
 # STEP 0: Analyze the Spectrum
 # Calculate the FFT (X_analysis) and the frequency array (freqs).
-# Plot the magnitude spectrum to visually identify the noise peak (200 Hz).
+# Plot the magnitude spectrum to visually identify the noise peak.
 N = #length of our signal
 freqs = # hint Use numpy.fft.fftfreq(N, d=ts)
 X_analysis = # [YOUR CODE HERE] Use numpy.fft.fft()
