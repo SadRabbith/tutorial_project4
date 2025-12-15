@@ -44,7 +44,7 @@ X_analysis = # [YOUR CODE HERE] Use numpy.fft.fft()
 # hint Only plot for positive frequencies (freqs >= 0).
 plt.figure(figsize=(10, 4))
 # [YOUR PLOTTING CODE HERE] 
-plt.plot(freqs[CONDITIONAL STATEMENT], np.abs(X_analysis)[freqs >= 0] / N)
+plt.plot(freqs[CONDITIONAL STATEMENT], np.abs(X_analysis)[CONDITIONAL STATEMENT] / N)
 plt.title('Frequency Spectrum (Analyze Noise)')
 plt.xlabel('Frequency (Hz)')
 plt.ylabel('Normalized Amplitude')
@@ -77,13 +77,13 @@ fig.suptitle("FFT-based Low-Pass Filtering Results", fontsize=16)
 
 # Time Domain Plot Comparison
 # HINT: Plot the Noisy Signal, the Filtered Signal, and the Ideal Clean Signal.
-axs[0].plot(t, signal, 'r', alpha=0.5, label='Noisy Signal (Input)')
+axs[0].plot(t, signal, 'r', alpha=0.5, label='Noisy Signal (Input)')  #the noisy signal
 
-#uncomment and finish the code
+#CODE HERE
 
-#axs[0].plot(t, , 'b', label='Filtered Signal (Output)') # [STUDENT CODE HERE: Filtered Signal]
-#axs[0].plot(t, , 'k--', alpha=0.5, label='Ideal Clean Signal') # [STUDENT CODE HERE: Ideal Clean Signal]
-#axs[0].set_title('1. Time Domain Comparison')
+axs[0].plot(t, , 'b', label='Filtered Signal (Output)') # [STUDENT CODE HERE: Filtered Signal]
+axs[0].plot(t, , 'k--', alpha=0.5, label='Ideal Clean Signal') # [STUDENT CODE HERE: Ideal Clean Signal]
+axs[0].set_title('1. Time Domain Comparison')
 axs[0].set_xlabel('Time (s)')
 axs[0].set_ylabel('Amplitude')
 axs[0].legend()
